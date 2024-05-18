@@ -16,7 +16,7 @@ const isGeo = (value: any): boolean =>
   value.hasOwnProperty("_longitude");
 
 export const toAppSearch = (
-  data: Record<string, any> = {}
+  data: Record<string, any> = {},
 ): Record<string, any> => {
   const indexedFields = parseIndexedFields(process.env.INDEXED_FIELDS);
 
@@ -45,7 +45,7 @@ export const toAppSearch = (
 
     if (processedFieldName === "") {
       functions.logger.warn(
-        `Skipped indexing a field named ${parsedFieldName}. Attempted to rename the field to remove special characters which resulted in an empty string. Please use the "::" syntax to rename this field. Example: ${parsedFieldName}::some_other_field_name.`
+        `Skipped indexing a field named ${parsedFieldName}. Attempted to rename the field to remove special characters which resulted in an empty string. Please use the "::" syntax to rename this field. Example: ${parsedFieldName}::some_other_field_name.`,
       );
       return acc;
     }
@@ -54,7 +54,7 @@ export const toAppSearch = (
       return {
         ...acc,
         [processedFieldName]: new Date(
-          fieldValue._seconds * 1000
+          fieldValue._seconds * 1000,
         ).toISOString(),
       };
     }

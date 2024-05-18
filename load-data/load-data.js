@@ -16,11 +16,11 @@ const addDocs = async () => {
       const doc = {
         ...nationalPark,
         date_established: admin.firestore.Timestamp.fromDate(
-          new Date(nationalPark.date_established)
+          new Date(nationalPark.date_established),
         ),
         location: new admin.firestore.GeoPoint(
           parseFloat(nationalPark.location.split(",")[0]),
-          parseFloat(nationalPark.location.split(",")[1])
+          parseFloat(nationalPark.location.split(",")[1]),
         ),
         visitors: parseInt(nationalPark.visitors),
         square_km: parseInt(nationalPark.square_km),

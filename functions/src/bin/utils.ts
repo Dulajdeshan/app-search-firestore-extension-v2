@@ -1,6 +1,6 @@
 export const batchArray = <T extends any>(
   array: Array<T>,
-  size: number
+  size: number,
 ): Array<Array<T>> => {
   const batches = [];
   let index = 0;

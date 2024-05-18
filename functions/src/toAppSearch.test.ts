@@ -24,7 +24,7 @@ describe("toAppSearch", () => {
         foo: "foo",
         bar: "bar",
         baz: "baz",
-      })
+      }),
     ).toEqual({
       foo: "foo",
       bar: "bar",
@@ -39,7 +39,7 @@ describe("toAppSearch", () => {
         Foo: "foo",
         Bar: "bar",
         Baz: "baz",
-      })
+      }),
     ).toEqual({
       foo: "foo",
       bar: "bar",
@@ -55,7 +55,7 @@ describe("toAppSearch", () => {
         "a1-b-c": "a1-b-c",
         "d e_f": "d e_f",
         大: "大",
-      })
+      }),
     ).toEqual({
       a: "a大",
       a1bc: "a1-b-c",
@@ -72,7 +72,7 @@ describe("toAppSearch", () => {
         A: "A",
         a: "a",
         a大: "a大",
-      })
+      }),
     ).toEqual({
       a: "a大",
     });
@@ -87,7 +87,7 @@ describe("toAppSearch", () => {
           A: "A",
           a: "a",
           a大: "a大",
-        })
+        }),
       ).toEqual({
         a: "A",
         a1: "a",
@@ -103,7 +103,7 @@ describe("toAppSearch", () => {
           A: "A",
           "a::a1": "a",
           a大: "a大",
-        })
+        }),
       ).toEqual({
         a: "A",
         aa1: "a",
@@ -124,7 +124,7 @@ describe("toAppSearch", () => {
               qux: "test",
             },
           },
-        })
+        }),
       ).toEqual({
         foo: "foo",
         bar__baz__qux: "test",
@@ -143,7 +143,7 @@ describe("toAppSearch", () => {
               qux: "qux",
             },
           },
-        })
+        }),
       ).toEqual({
         foo: "foo",
         // App search doesn't support dot notation so we need to join them with "__"
@@ -166,7 +166,7 @@ describe("toAppSearch", () => {
             quux: "quux",
             quuz: "quuz",
           },
-        })
+        }),
         // When this is sent to app search it will be converted to stringified JSON
       ).toEqual({
         baz: {
@@ -183,7 +183,7 @@ describe("toAppSearch", () => {
       expect(
         toAppSearch({
           baz: 1,
-        })
+        }),
         // After this is sent to app search it will be converted from a number to a string
       ).toEqual({
         baz: 1,
@@ -196,7 +196,7 @@ describe("toAppSearch", () => {
       expect(
         toAppSearch({
           baz: true,
-        })
+        }),
         // After this is sent to app search it will be converted from a boolean to a string
       ).toEqual({
         baz: true,
@@ -230,7 +230,7 @@ describe("toAppSearch", () => {
             },
           ],
           f: ["a", ["b"]],
-        })
+        }),
       ).toEqual({
         // ["a", "b", "c"] is passed is not touched, an array of strings is valid in app search
         a: ["a", "b", "c"],
@@ -263,7 +263,7 @@ describe("toAppSearch", () => {
             _seconds: 1631213624,
             _nanoseconds: 176000000,
           },
-        })
+        }),
       ).toEqual({
         baz: "2021-09-09T18:53:44.000Z",
       });
@@ -278,7 +278,7 @@ describe("toAppSearch", () => {
             _latitude: 41.12,
             _longitude: -71.34,
           },
-        })
+        }),
       ).toEqual({
         baz: "41.12,-71.34",
       });
@@ -290,7 +290,7 @@ describe("toAppSearch", () => {
       expect(
         toAppSearch({
           baz: null,
-        })
+        }),
       ).toEqual({
         // This is an actual data type in firestore, app search can support it so we just pass it through as null
         baz: null,
@@ -311,7 +311,7 @@ describe("toAppSearch", () => {
             },
             _converter: {},
           },
-        })
+        }),
       ).toEqual({
         // References will end up getting converted to serialized JSON objects of the following format, this is probably
         // unexpected for the user.
@@ -336,7 +336,7 @@ describe("toAppSearch", () => {
       toAppSearch({
         foo: null,
         bar: undefined,
-      })
+      }),
     ).toEqual({
       foo: null,
     });
@@ -349,7 +349,7 @@ describe("toAppSearch", () => {
       toAppSearch({
         foo: "foo",
         bar: "bar",
-      })
+      }),
     ).toEqual({});
   });
 
@@ -360,7 +360,7 @@ describe("toAppSearch", () => {
       toAppSearch({
         foo: "foo",
         bar: "bar",
-      })
+      }),
     ).toEqual({});
   });
 
@@ -371,7 +371,7 @@ describe("toAppSearch", () => {
       toAppSearch({
         foo: "foo",
         bar: "bar",
-      })
+      }),
     ).toEqual({
       foo: "foo",
       bar: "bar",

@@ -9,9 +9,9 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "firebase-admin": "^9.11.1",
-    "prettier": "2.3.2"
+    "@types/jest": "^29.5.12",
+    "firebase-admin": "^11.8.0",
+    "prettier": "3.2.5"
   },
   "private": true
 }
