@@ -1,5 +1,5 @@
 {
-  "name": "elastic-app-search-firestore-extension-v2",
+  "name": "elastic-app-search-firestore-extension",
   "version": "0.4.3",
   "description": "An extension that syncs data from Google's Cloud Firestore to Elastic App Search.",
   "scripts": {
@@ -24,7 +24,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dulajdeshan/elastic-app-search-firestore-extension-v2.git"
+    "url": "git+https://github.com/Dulajdeshan/elastic-app-search-firestore-extension.git"
   },
   "keywords": [
     "firebase",
@@ -33,9 +33,9 @@
   "author": "Elastic",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Dulajdeshan/elastic-app-search-firestore-extension-v2/issues"
+    "url": "https://github.com/Dulajdeshan/elastic-app-search-firestore-extension/issues"
   },
-  "homepage": "https://github.com/Dulajdeshan/elastic-app-search-firestore-extension-v2#readme",
+  "homepage": "https://github.com/Dulajdeshan/elastic-app-search-firestore-extension#readme",
   "dependencies": {
     "@types/lodash": "^4.14.175",
     "@elastic/app-search-node": "^8.3.2",
