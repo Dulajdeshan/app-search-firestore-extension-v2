@@ -85,7 +85,7 @@ describe("shipToElastic", () => {
       {
         foo: "foo",
         bar: "bar",
-      }
+      },
     ) as any;
 
     await shipToElastic(change);

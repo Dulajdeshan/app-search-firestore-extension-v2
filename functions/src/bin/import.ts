@@ -37,7 +37,7 @@ const main = async () => {
     console.log(`Retrieved ${collectionDocs.length} documents`);
   } catch (e) {
     console.error(
-      `Error retrieving documents for collection ${collectionPath}`
+      `Error retrieving documents for collection ${collectionPath}`,
     );
     throw e;
   }
@@ -50,37 +50,37 @@ const main = async () => {
   const documentBatches = batchArray(preparedDocs, batchSize);
 
   console.log(
-    `Submitting  ${collectionDocs.length} documents in ${documentBatches.length} batches of size ${batchSize} to engine ${appSearchEngineName}`
+    `Submitting  ${collectionDocs.length} documents in ${documentBatches.length} batches of size ${batchSize} to engine ${appSearchEngineName}`,
   );
 
   for (const [index, documentBatch] of documentBatches.entries()) {
     try {
       console.log(
-        `Submitting  ${documentBatch.length} documents as a part of batch ${index}`
+        `Submitting  ${documentBatch.length} documents as a part of batch ${index}`,
       );
 
       const response = await appSearchClient.indexDocuments(
         appSearchEngineName,
-        documentBatch
+        documentBatch,
       );
 
       response.forEach((r: { errors: string[] }) =>
-        r.errors.forEach(console.error)
+        r.errors.forEach(console.error),
       );
     } catch (e) {
       console.error(
-        `Error submitting batch ${index} to ${appSearchEngineName}`
+        `Error submitting batch ${index} to ${appSearchEngineName}`,
       );
       throw e;
     }
 
     console.log(
-      `Successfully submitted batch ${index} to engine ${appSearchEngineName}`
+      `Successfully submitted batch ${index} to engine ${appSearchEngineName}`,
     );
   }
 
   console.log(
-    `Successfully imported all ${collectionDocs.length} documents to engine ${appSearchEngineName}`
+    `Successfully imported all ${collectionDocs.length} documents to engine ${appSearchEngineName}`,
   );
 };
 

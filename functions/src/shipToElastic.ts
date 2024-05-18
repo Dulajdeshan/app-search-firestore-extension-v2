@@ -1,4 +1,4 @@
-import * as functions from "firebase-functions";
+import * as functions from "firebase-functions/v1";
 import { toAppSearch } from "./toAppSearch";
 
 import { getNewAppSearchClient } from "./utils";
@@ -8,7 +8,7 @@ const appSearchClient = getNewAppSearchClient();
 // We separate and curry this function from shipToElastic so we can test with less mocking
 export const handler = (client: any) => {
   return async (
-    change: functions.Change<functions.firestore.DocumentSnapshot>
+    change: functions.Change<functions.firestore.DocumentSnapshot>,
   ) => {
     functions.logger.info(`Received request to ship to ship to Elastic`, {
       change,
@@ -64,6 +64,6 @@ export const handler = (client: any) => {
 // https://firebase.google.com/docs/extensions/alpha/construct-functions#firestore
 // Also note that tyipcally in a function you specify the path in the call to `document` like `/${config.collectionName}/{documentId}`.
 // In an extension, the path is specified in extension.yaml, in eventTrigger.
-export const shipToElastic = functions.handler.firestore.document.onWrite(
-  handler(appSearchClient)
-);
+export const shipToElastic = functions.firestore
+  .document(`${process.env.COLLECTION_PATH}/{id}`)
+  .onWrite(handler(appSearchClient));

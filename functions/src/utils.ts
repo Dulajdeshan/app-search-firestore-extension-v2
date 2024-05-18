@@ -10,14 +10,14 @@ export const getNewAppSearchClient = (): any => {
   return new AppSearchClient(
     undefined,
     process.env.APP_SEARCH_API_KEY,
-    () => `${process.env.ENTERPRISE_SEARCH_URL}/api/as/v1/`
+    () => `${process.env.ENTERPRISE_SEARCH_URL}/api/as/v1/`,
   );
 };
 
 export const getNewAppSearchLowLevelClient = (): any => {
   return new AppSearchLowLevelClient(
     process.env.APP_SEARCH_API_KEY,
-    `${process.env.ENTERPRISE_SEARCH_URL}/api/as/v1/`
+    `${process.env.ENTERPRISE_SEARCH_URL}/api/as/v1/`,
   );
 };
 

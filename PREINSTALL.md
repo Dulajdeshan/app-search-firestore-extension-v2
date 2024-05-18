@@ -15,7 +15,7 @@ This extension indexes and syncs the documents in a Cloud Firestore collection t
 
 Elastic App Search provides a comprehensive API for implementing common search patterns like auto-completed search suggestions and faceted filter navigation. You'll also have tooling so your team can easily track and tweak search relevance based on usage data.
 
-App Search is a part of [Elastic Enterprise Search](https://www.elastic.co/guide/en/enterprise-search/current/installation.html). You'll need an Enterprise Search deployment, which is created and maintained outside of Firebase. 
+App Search is a part of [Elastic Enterprise Search](https://www.elastic.co/guide/en/enterprise-search/current/installation.html). You'll need an Enterprise Search deployment, which is created and maintained outside of Firebase.
 
 #### Getting started
 
@@ -30,9 +30,9 @@ If you have documents in your collection already, this extension also provides a
 <!-- We recommend keeping the following section to explain how billing for Firebase Extensions works -->
 
 #### Billing
- 
+
 To install an extension, your project must be on the [Blaze (pay as you go) plan](https://firebase.google.com/pricing)
- 
+
 - You will be charged a small amount (typically around $0.01/month) for the Firebase resources required by this extension (even if it is not used).
 - This extension uses other Firebase and Google Cloud Platform services, which have associated charges if you exceed the service’s free tier:
   - Cloud Functions (Node.js 10+ runtime. See [FAQs](https://firebase.google.com/support/faq#expandable-24))
