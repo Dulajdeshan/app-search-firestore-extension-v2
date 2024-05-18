@@ -8,7 +8,7 @@ Out-of-the-box, Cloud Firestore provides no mechanism for full-text search on da
 
 ### From the web
 
-Visit the following link: https://console.firebase.google.com/project/_/extensions/install?ref=elastic/firestore-elastic-app-search@0.4.1
+Visit the following link: https://console.firebase.google.com/project/_/extensions/install?ref=dulajdeshan/firestore-elastic-app-search-v2@0.4.3
 
 ### From source
 
