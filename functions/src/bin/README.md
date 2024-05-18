@@ -8,7 +8,7 @@ See the POSTINSTALL.md for instructions on running this script to backfill and r
 
 ### Building the script
 
-All setup must be run from the directory `/app-search-firestore-extension/functions`
+All setup must be run from the directory `/elastic-app-search-firestore-extension-v2/functions`
 
 Typescript must be compiled before we can run this script
 
@@ -24,7 +24,7 @@ npm run build -- -w
 
 ## Running the script
 
-All scripts must be run from the directory `/app-search-firestore-extension/functions`, and only after building the script
+All scripts must be run from the directory `/elastic-app-search-firestore-extension-v2/functions`, and only after building the script
 
 To run against a local Firebase emulator:
 

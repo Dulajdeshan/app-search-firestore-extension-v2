@@ -47,7 +47,7 @@ INDEXED_FIELDS=${param:INDEXED_FIELDS} \
 ENTERPRISE_SEARCH_URL=${param:ENTERPRISE_SEARCH_URL} \
 APP_SEARCH_API_KEY= { your private app search API key here } \
 APP_SEARCH_ENGINE_NAME=${param:APP_SEARCH_ENGINE_NAME} \
-npx @elastic/app-search-firestore-extension-v2 import
+npx elastic-app-search-firestore-extension-v2 import
 ```
 
 ### _(Optional)_ Configure App Search engine schema
