@@ -1,3 +1,7 @@
+## Version 0.4.2
+
+feature - Upgrade to Node 18
+
 ## Version 0.4.1
 
 fixed - Fixed API key in backport command in POSTINSTALL.md
